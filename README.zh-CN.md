@@ -42,28 +42,20 @@ Agent 越多 ≠ 进展越快。没有工程约束,Agent 越多只意味着混�
 
 ## 安装
 
-本 skill 遵循标准的 `SKILL.md` agent-skill 格式。
+本 skill 遵循标准的 `SKILL.md` agent-skill 格式,目前只面向 **OpenAI Codex CLI**。
 
-**Claude Code** —— 把 skill 文件夹复制进 skills 目录:
+**Codex CLI** —— 把 skill 文件夹复制进 skills 目录:
 
 ```bash
 # 个人级(所有项目可用)
 git clone https://github.com/yujunyi1018-rgb/loop-engineering-orchestrator.git
-cp -r loop-engineering-orchestrator/loop-engineering-orchestrator ~/.claude/skills/
+cp -r loop-engineering-orchestrator/loop-engineering-orchestrator ~/.codex/skills/
 
 # 或项目级
-cp -r loop-engineering-orchestrator/loop-engineering-orchestrator .claude/skills/
+cp -r loop-engineering-orchestrator/loop-engineering-orchestrator .codex/skills/
 ```
 
-注意路径必须是 `~/.claude/skills/loop-engineering-orchestrator/SKILL.md`——不能多嵌套一层。开启新会话后自动生效。
-
-**Claude.ai** —— 在 **设置 → Capabilities/Features → skills** 中上传打包好的 `.skill` 文件(或整个 skill 文件夹的 zip)。
-
-**Codex CLI / 其他 Agent** —— 大多数支持 `SKILL.md` 格式的 Agent 会读取厂商中立路径 `.agents/skills/`:
-
-```bash
-cp -r loop-engineering-orchestrator/loop-engineering-orchestrator .agents/skills/
-```
+注意路径必须是 `~/.codex/skills/loop-engineering-orchestrator/SKILL.md`——不能多嵌套一层。在项目根目录的 `AGENTS.md` 中用 `@loop-engineering-orchestrator` 引用它,新会话即可生效。
 
 ## 用法
 

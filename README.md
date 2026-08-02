@@ -42,28 +42,20 @@ One sentence: **documents hold facts, roles hold responsibility, snapshots freez
 
 ## Installation
 
-This skill follows the standard `SKILL.md` agent-skill format.
+This skill follows the standard `SKILL.md` agent-skill format and currently targets the **OpenAI Codex CLI**.
 
-**Claude Code** — copy the skill folder into your skills directory:
+**Codex CLI** — copy the skill folder into your skills directory:
 
 ```bash
 # personal (all projects)
 git clone https://github.com/yujunyi1018-rgb/loop-engineering-orchestrator.git
-cp -r loop-engineering-orchestrator/loop-engineering-orchestrator ~/.claude/skills/
+cp -r loop-engineering-orchestrator/loop-engineering-orchestrator ~/.codex/skills/
 
 # or project-level
-cp -r loop-engineering-orchestrator/loop-engineering-orchestrator .claude/skills/
+cp -r loop-engineering-orchestrator/loop-engineering-orchestrator .codex/skills/
 ```
 
-The path must be `~/.claude/skills/loop-engineering-orchestrator/SKILL.md` — not nested one level deeper. Start a new session and the skill is picked up automatically.
-
-**Claude.ai** — upload the packaged `.skill` file (or a zip of the skill folder) under **Settings → Capabilities/Features → skills**.
-
-**Codex CLI / other agents** — most agents that support the `SKILL.md` format read from `.agents/skills/` as a vendor-neutral path:
-
-```bash
-cp -r loop-engineering-orchestrator/loop-engineering-orchestrator .agents/skills/
-```
+The path must be `~/.codex/skills/loop-engineering-orchestrator/SKILL.md` — not nested one level deeper. Reference it from your project's `AGENTS.md` with `@loop-engineering-orchestrator`, and it will be picked up in new Codex sessions.
 
 ## Usage
 
